@@ -2,8 +2,6 @@ FROM alpine:3.8
 
 LABEL maintainer="Ycarus (Yannick Chabanois) <ycarus@zugaina.org>"
 
-ENV MLVPN /etc/mlvpn
-
 RUN apk add --no-cache iproute2 autoconf automake build-base gcc libpcap-dev libsodium-dev libev-dev linux-headers bsd-compat-headers musl-dev patch
 
 # MLVPN new reorder
