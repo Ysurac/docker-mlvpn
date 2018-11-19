@@ -18,8 +18,10 @@ RUN unzip /tmp/new-reorder.zip \
     && rm -rf /tmp/MLVPN-new-reorder \
     && apk del autoconf automake build-base gcc linux-headers bsd-compat-headers patch
 
+RUN useradd -ms /bin/bash mlvpn
+
 #COPY mlvpn0.conf /etc/mlvpn/mlvpn0.conf
 
 VOLUME ["/etc/mlvpn"]
 
-CMD /usr/local/sbin/mlvpn --config /etc/mlvpn/mlvpn0.conf
+CMD /usr/local/sbin/mlvpn --config /etc/mlvpn/mlvpn0.conf --user mlvpn
